@@ -1,0 +1,58 @@
+//example of a closure
+// function buildFunctions() {
+//     var arr = [];
+//     for (var i = 0; i < 3 ; i ++) {
+//       arr.push(
+//         function() {
+//           console.log(i);
+//         }
+//       )
+//     }
+//     return arr;
+// }
+//
+// var fs = buildFunctions();
+// fs[0]();
+// fs[1]();
+// fs[2]();
+//
+//
+// // example of a closure by storing j
+//
+// function buildFunctions2() {
+//     var arr = [];
+//     for (var i = 0; i < 3 ; i ++) {
+//       arr.push(
+//         (function(j) {
+//           return function() {
+//             console.log(j);
+//           }
+//         }(i))
+//       )
+//     }
+//     return arr;
+// }
+//
+// var fs2 = buildFunctions2();
+// fs2[0]();
+// fs2[1]();
+// fs2[2]();
+
+
+// function factories
+function makeGreeting(language) {
+  return function(firstname, lastname) {
+    if (language === 'en') {
+      console.log('Hello ' + firstname + ' ' + lastname)
+    }
+    if (language === 'es') {
+      console.log('Hola ' + firstname + ' ' + lastname)
+    }
+  }
+}
+
+var english = makeGreeting('en');
+
+var spanish = makeGreeting('es');
+
+english('cody','condon')
