@@ -177,3 +177,20 @@
 //
 // var arr5 = mapForEach(arr1,checkPastLimitSimplified(2));
 // console.log(arr5);
+
+// Messing with a prototype 
+function Person(firstname,lastname){
+  console.log(this)
+  this.firstname = firstname;
+  this.lastname = lastname;
+  console.log('This function is invoked')
+}
+
+Person.prototype.getFullName = function() {
+  return this.firstname + ' ' + this.lastname;
+}
+var john = new Person('john','doe');
+console.log(john);
+
+var jane = new Person('jane', "doe");
+console.log(jane);
